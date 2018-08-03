@@ -13,5 +13,8 @@ try {
 }
 
 mongoose.connection
-    .once('open', () => console.log('MongoDB Running'));
+    .once('open', () => console.log('MongoDB Running'))
+    .on('error', e => {
+        throw e;
+    });
 
